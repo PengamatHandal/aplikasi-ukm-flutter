@@ -1,0 +1,215 @@
+runtime: php82  # version of php
+env: standard     # set app engine env to standard
+
+runtime_config:
+  document_root: public
+
+# for detecting static files in the public folder
+handlers:
+  - url: /(.*\.(gif|png|jpg|css|js))$
+    static_files: public/\1
+    upload: public/.*\.(gif|png|jpg|css|js)$
+  - url: /api/.*
+    script: auto
+    secure: always
+  - url: /.*
+    secure: always
+    redirect_http_response_code: 301
+    script: auto
+
+env_variables:
+  APP_KEY: base64:bHqXj3LQ5B2zcg4y5mBj/OUTWqA1SEPpfaDhz4voXdY=
+  APP_STORAGE: /tmp
+  VIEW_COMPILED_PATH: /tmp
+  APP_SERVICES_CACHE: /tmp/services.php
+  APP_PACKAGES_CACHE: /tmp/packages.php
+  APP_CONFIG_CACHE: /tmp/config.php
+  APP_ROUTES_CACHE: /tmp/routes.php
+  APP_LOG_PATH: /tmp/logs/laravel.log
+
+  FILESYSTEM_DRIVER: gcs
+  GOOGLE_CLOUD_PROJECT_ID: annular-mercury-428001-f7
+  GOOGLE_CLOUD_STORAGE_BUCKET: annular-mercury-428001-f7.appspot.com
+
+  DB_CONNECTION: mysql
+  DB_DATABASE: db_tools_app
+  DB_USERNAME: webApp
+  DB_PASSWORD: bill
+  DB_SOCKET: /cloudsql/annular-mercury-428001-f7:asia-southeast2:api-web-tools
+
+  APP_NAME: "Google cloud vision"
+  APP_ENV: production
+  APP_DEBUG: true
+  APP_URL: https://annular-mercury-428001-f7.et.r.appspot.com
+  ASSET_URL: https://annular-mercury-428001-f7.et.r.appspot.com
+
+  JWT_SECRET: =yHQuxqzO6f5sVruGhS5Li2X9dH6KPoGBZ8Loi8mgOrqefKI0WtuHqj7oPy16ZdwO
+
+  SESSION_DRIVER: cookie
+
+  QUEUE_CONNECTION: sync
+
+  PUSHER_APP_ID:
+  PUSHER_APP_KEY:
+  PUSHER_APP_SECRET:
+  PUSHER_APP_CLUSTER: mt1
+
+beta_settings:
+  cloud_sql_instances: annular-mercury-428001-f7:asia-southeast2:api-web-tools
+
+  
+
+# runtime: php82 # <--- Pastikan ini sesuai dengan versi PHP yang digunakan oleh Laravel Anda.
+# env: standard
+
+# # Handler untuk melayani file statis dari folder hasil build Vue Anda.
+# # GANTI 'dist-vue' dengan nama folder yang benar di dalam public jika berbeda.
+# # Misalnya, jika hasil build Vue Anda di public/build, maka ubah menjadi /build/(.+)
+# handlers:
+#   - url: /dist-vue/(.+)
+#     static_files: public/dist-vue/\1
+#     upload: public/dist-vue/(.*)
+#     secure: always
+
+#   # Handler untuk melayani aset statis Laravel lainnya (gambar, CSS, JS dari Mix/Vite yang tidak di folder Vue build).
+#   # Tambahkan ekstensi file lain yang mungkin Anda miliki, seperti .map jika menggunakan sourcemap.
+#   - url: /(.*\.(gif|png|jpg|jpeg|ico|css|js|woff|woff2|ttf|eot|svg|map|json|webp|avif))$
+#     static_files: public/\1
+#     upload: public/(.*\.(gif|png|jpg|jpeg|ico|css|js|woff|woff2|ttf|eot|svg|map|json|webp|avif))$
+#     secure: always
+
+#   # Handler catch-all untuk PHP/Laravel dan Vue Router (SPA).
+#   # SEMUA permintaan yang tidak cocok dengan aturan file statis di atas akan diarahkan ke public/index.php Laravel.
+#   - url: /(.*)*
+#     script: auto # Ini akan secara otomatis mengarahkan ke public/index.php
+#     secure: always
+
+# runtime_config:
+#   document_root: public # <--- INI PENTING! HARUS 'public' untuk Laravel.
+
+# env_variables:
+#   APP_ENV: production
+#   APP_DEBUG: FALSE
+#   APP_KEY: base64:bHqXj3LQ5B2zcg4y5mBj/OUTWqA1SEPpfaDhz4voXdY= # <--- APP_KEY Anda dari .env lokal
+#   APP_URL: https://annular-mercury-428001-f7.uc.r.appspot.com 
+#   LOG_CHANNEL: stack
+#   DB_CONNECTION: mysql
+
+#   # Konfigurasi Google Cloud SQL:
+#   DB_HOST: /cloudsql/annular-mercury-428001-f7:asia-southeast2:api-web-tools # <--- Pastikan ini benar
+#   DB_DATABASE: db_tools_app
+#   DB_USERNAME: webApp
+#   DB_PASSWORD: 7{&t768.LIV-5<3
+#   # DB_PORT: 3306 # <--- Baris ini bisa dihapus karena tidak digunakan dengan Unix socket.
+
+#   CACHE_DRIVER: file
+#   SESSION_DRIVER: file
+#   QUEUE_CONNECTION: sync
+
+
+# runtime: php82 # <--- Sesuaikan dengan versi PHP yang Anda gunakan (misal: php81, php83)
+# env: standard
+
+# entrypoint: php artisan serve --host=0.0.0.0 --port=8080
+
+# handlers:
+#   # Rule 2: Melayani semua file statis lainnya dari root direktori 'public' Laravel.
+#   # - url: /(.*\.(gif|png|jpg|jpeg|ico|css|js|woff|woff2|ttf|eot|svg))$
+#   #   static_files: public/\1
+#   #   upload: public/(.*\.(gif|png|jpg|jpeg|ico|css|js|woff|woff2|ttf|eot|svg))$
+#   #   secure: always
+
+#   # Rule 3: Catch-all untuk Laravel dan Vue Router.
+#   # Semua permintaan yang tidak cocok dengan aturan file statis di atas akan diarahkan ke public/index.php Laravel.
+#   - url: /.*
+#     script: auto # App Engine akan otomatis menjalankan public/index.php
+#     # secure: always
+
+# runtime_config:
+#   document_root: public
+
+# # Variabel Lingkungan untuk Aplikasi Laravel Anda
+# env_variables:
+#   APP_ENV: production
+#   APP_DEBUG: FALSE
+#   APP_KEY: base64:imQezGiUHL9foMYO+xTgQeoRdbXxnOwZm9NEkQlT2jo=
+#   APP_URL: https://annular-mercury-428001-f7.uc.r.appspot.com # <--- GANTI DENGAN ID PROYEK BARU ANDA
+#   LOG_CHANNEL: stack
+#   DB_CONNECTION: mysql
+
+#   # Jika menggunakan Google Cloud SQL:
+#   DB_HOST: /cloudsql/annular-mercury-428001-f7:asia-southeast2:api-web-tools # <--- SESUAIKAN DENGAN DETAIL CLOUD SQL ANDA
+#   DB_DATABASE: db_tools_app # <--- Nama database Anda
+#   DB_USERNAME: webApp # <--- Username database Anda
+#   DB_PASSWORD: 7{&t768.LIV-5<3 # <--- Password database Anda
+#   DB_PORT: 3306
+
+#   CACHE_DRIVER: file # Atau database, redis (jika menggunakan Memorystore)
+#   SESSION_DRIVER: file # Atau database, redis (jika menggunakan Memorystore)
+#   QUEUE_CONNECTION: sync # Atau database, redis
+
+
+
+# runtime: php82
+# env: standard
+
+# instance_class: F1
+
+# entrypoint: php artisan serve --host=0.0.0.0 --port=8080
+
+# handlers:
+# - url: /(.*)
+#   script: auto
+
+# runtime_config:
+#   document_root: public
+
+# env_variables:
+#   APP_ENV: production
+#   APP_DEBUG: false
+#   DB_CONNECTION: mysql
+#   DB_DATABASE: db_tools_app
+#   DB_USERNAME: webApp
+#   DB_PORT: 3306
+#   APP_KEY: base64:ncNvEfWUPuj0xlnfcSd3RTgDkjkKoCOWvZsX0Cmrmv0=
+#   DB_PASSWORD: 7{&t768.LIV-5<3 
+#   DB_HOST: /cloudsql/annular-mercury-428001-f7:asia-southeast2:api-web-tools
+
+# beta_settings:
+#   cloud_sql_instances: annular-mercury-428001-f7:asia-southeast2:api-web-tools
+
+
+
+
+# runtime: php82 # Atau php81, tergantung versi PHP di Laravel Anda. Sesuaikan dengan `composer.json`.
+# env: standard
+
+# instance_class: F1 # Class instance yang paling kecil dan hemat. Bagus untuk API awal.
+
+# entrypoint: php artisan serve --host=0.0.0.0 --port=8080 # Cara App Engine menjalankan Laravel
+
+# handlers:
+# - url: /(.*)
+#   script: auto # Mengarahkan semua permintaan ke `public/index.php` Laravel
+
+# runtime_config:
+#   document_root: public # Direktori public Laravel Anda
+
+# # Variabel Lingkungan non-sensitif (opsional, bisa juga di .env)
+# env_variables:
+#   APP_ENV: production
+#   APP_DEBUG: false
+#   # Untuk Cloud SQL, DB_HOST akan dibaca dari secret, jadi tidak perlu di sini.
+#   DB_CONNECTION: mysql
+#   DB_DATABASE: db_tools_app # Nama database Anda
+#   DB_USERNAME: webApp # Username database Anda
+#   DB_PORT: 3306
+
+# # Konfigurasi Secret Manager untuk Kredensial Sensitif (APP_KEY, DB_PASSWORD)
+# secrets:
+#   APP_KEY: projects/928471476470/secrets/web-tools-api-app-key/versions/latest
+#   DB_PASSWORD: projects/928471476470/secrets/web-tools-db-pass/versions/latest
+
+# # Bagian untuk koneksi Cloud SQL
+# beta_settings:
+#   cloud_sql_instances: healthy-hearth-463111-k7:asia-southeast2:api-web-tools

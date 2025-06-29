@@ -1,0 +1,23 @@
+# GCloud Ignore Rules (Must be in the root of your Laravel project)
+
+# Ignore .git directory
+.git/
+
+# Ignore local environment files
+.env
+.env.*
+
+# Ignore Node.js dependencies
+node_modules/
+
+# Ignore PHP Composer dependencies
+vendor/
+
+# Ignore Laravel-specific files that are not needed in production or are temporary
+public/hot          
+
+# Ignore build artifacts (if any from your development process)
+npm-debug.log
+yarn-error.log
+.vscode/
+.idea/
