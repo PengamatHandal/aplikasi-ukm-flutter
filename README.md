@@ -36,7 +36,7 @@ Aplikasi ini memiliki sistem otorisasi berbasis peran dengan 3 level akses:
 * **Bahasa:** PHP
 * **Database:** MySQL / MariaDB
 * **Autentikasi:** JWT-Auth (JSON Web Token)
-* **Lingkungan Lokal:** Laragon / XAMPP / Laravel Herd
+* **Lingkungan Lokal:** XAMPP 
 
 #### **Front-End (Folder: `/client`)**
 * **Framework:** Flutter
@@ -92,7 +92,6 @@ php artisan jwt:secret
 #    DB_PASSWORD=
 #    
 #    PENTING: Atur juga APP_URL agar sesuai dengan server lokal Anda
-#    Contoh untuk Laragon: APP_URL=[http://server.test](http://server.test)
 #    Contoh untuk php artisan serve: APP_URL=[http://127.0.0.1:8000](http://127.0.0.1:8000)
 
 # 6. Buat tabel database dan isi dengan data contoh
@@ -125,7 +124,6 @@ flutter pub run build_runner build --delete-conflicting-outputs
 #    Buka file lib/services/api_service.dart
 #    Sesuaikan nilai 'baseUrl' agar menunjuk ke server Laravel Anda.
 #    Contoh:
-#    _dio.options.baseUrl = '[http://server.test/api](http://server.test/api)'; // Untuk Laragon
 #    _dio.options.baseUrl = '[http://10.0.2.2:8000/api](http://10.0.2.2:8000/api)'; // Untuk Emulator Android & artisan serve
 
 # 4. Jalankan aplikasi
