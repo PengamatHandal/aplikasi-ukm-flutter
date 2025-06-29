@@ -1,6 +1,6 @@
 # Aplikasi Agenda Kegiatan UKM Kampus (Universitas Pamulang)
 
-Aplikasi mobile terintegrasi untuk manajemen Unit Kegiatan Mahasiswa (UKM) di lingkungan kampus. [cite_start]Proyek ini dibangun untuk memenuhi tugas mata kuliah, dengan tujuan memodernisasi dan mendigitalisasi proses pengelolaan kegiatan, pendaftaran anggota, dan pengajuan UKM baru. [cite: 1, 12, 13, 20]
+Aplikasi mobile terintegrasi untuk manajemen Unit Kegiatan Mahasiswa (UKM) di lingkungan kampus. Proyek ini dibangun untuk memenuhi tugas mata kuliah, dengan tujuan memodernisasi dan mendigitalisasi proses pengelolaan kegiatan, pendaftaran anggota, dan pengajuan UKM baru.
 
 Aplikasi ini memisahkan antara Front-End (Aplikasi Mobile) dan Back-End (API Server) untuk skalabilitas dan pemeliharaan yang lebih mudah.
 
@@ -29,7 +29,7 @@ Aplikasi ini memiliki sistem otorisasi berbasis peran dengan 3 level akses:
 * **Persetujuan UKM:** Menyetujui atau menolak proposal UKM. Jika disetujui, UKM menjadi resmi dan pengaju otomatis menjadi Admin UKM.
 * **Menghapus UKM:** Dapat menghapus UKM yang sudah terdaftar dari sistem.
 
-## Tumpukan Teknologi (Technology Stack)
+## Technology Stack Aplikasi ini
 
 #### **Back-End (Folder: `/server`)**
 * **Framework:** Laravel
@@ -43,7 +43,7 @@ Aplikasi ini memiliki sistem otorisasi berbasis peran dengan 3 level akses:
 * **Bahasa:** Dart
 * **State Management:** Provider
 * **HTTP Client:** Dio (dengan Interceptors)
-* **UI/UX:** Material 3, Google Fonts, Custom Navigation Bar
+* **UI/UX:** Material 3, Google Fonts
 
 ## Struktur Folder
 
@@ -57,10 +57,10 @@ repo-root/
 
 Untuk menjalankan proyek ini di mesin lokal, ikuti langkah-langkah di bawah ini.
 
-### Prasyarat
+### Persyaratan Untuk Bisa Menjalankan Aplikasi ini
 * PHP (versi 8.1+)
 * Composer
-* Flutter SDK (versi 3.x.x)
+* Flutter SDK (versi 3+)
 * Lingkungan server lokal seperti Laragon, XAMPP, atau Laravel Herd.
 * Alat pengelola database seperti phpMyAdmin atau HeidiSQL.
 
@@ -143,8 +143,6 @@ flutter run
 | 221011400458 | JOSHUA PUTRA GULTOM |
 | 221011401742 | MUHAMAD SOBRAN |
 | 221011400381 | MUHAMMAD FAHRY |
-
-[cite_start][cite: 3]
 
 ---
 Copyright (c) 2025 - Kelompok 3, Teknik Informatika, Universitas Pamulang.
