@@ -14,25 +14,22 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        // 1. Buat Super Admin
         User::create([
             'name' => 'Super Admin',
-            'nim' => '000000000000',
+            'nim' => '297654123',
             'email' => 'superadmin@unpam.ac.id',
-            'password' => Hash::make('password'),
+            'password' => Hash::make('tes'),
             'role' => 'super_admin',
         ]);
 
-        // 2. Buat Admin UKM
         User::create([
-            'name' => 'Admin UKM Futsal',
-            'nim' => '111111111111',
+            'name' => 'Futsal Base Community',
+            'nim' => '221011407652',
             'email' => 'admin.futsal@unpam.ac.id',
-            'password' => Hash::make('password'),
+            'password' => Hash::make('tes'),
             'role' => 'admin_ukm',
         ]);
 
-        // 3. Buat 20 user mahasiswa menggunakan factory
         User::factory(20)->create();
     }
 }

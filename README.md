@@ -144,6 +144,23 @@ flutter run
 | 221011401742 | MUHAMAD SOBRAN |
 | 221011400381 | MUHAMMAD FAHRY |
 
+## Informasi User Tersedia
+
+```bash
+
+# Super Admin
+email : superadmin@unpam.ac.id
+password : password
+
+# Admin UKM
+email : admin.futsal@unpam.ac.id
+password : password
+
+# Mahasiswa
+silahkan lakukan pembuatan akun baru di menu login dan klik 'Daftar di sini'
+
+```
+
 ---
 Copyright (c) 2025 - Kelompok 3, Teknik Informatika, Universitas Pamulang.
 Semua Hak Dilindungi (All Rights Reserved).

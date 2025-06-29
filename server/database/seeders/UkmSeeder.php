@@ -14,10 +14,8 @@ class UkmSeeder extends Seeder
      */
     public function run(): void
     {
-        // Cari user admin yang sudah dibuat di UserSeeder
         $adminFutsal = User::where('email', 'admin.futsal@unpam.ac.id')->first();
         
-        // Buat UKM Futsal dan tautkan adminnya
         Ukm::create([
             'nama_ukm' => 'UKM Futsal Victory',
             'deskripsi' => 'Unit Kegiatan Mahasiswa untuk para pecinta futsal di Universitas Pamulang.',
@@ -26,7 +24,6 @@ class UkmSeeder extends Seeder
             'user_id' => $adminFutsal->id,
         ]);
 
-        // Buat 5 UKM lainnya dengan admin acak dari user yang ada
         $users = User::where('role', 'mahasiswa')->get();
         for ($i=0; $i < 5; $i++) { 
             Ukm::factory()->create([
